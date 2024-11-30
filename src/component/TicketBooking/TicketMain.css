@@ -1,0 +1,128 @@
+
+.ticket-section-container {
+   
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ticket-background-image-container {
+    position: absolute;
+    left: -150px;
+    z-index: -2;
+  }
+  .ticket-section-image-container {
+    flex: 0.9;
+    margin-right: 1rem;
+  }
+
+  .ticketbookingSection{
+    margin-top: 2rem;
+    background-color: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 750px;
+    border-radius: 2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ticketbookingSection{
+    margin: 2rem auto;
+  }
+
+  
+  .booking-subheading{
+    font-weight: 700;
+    color: black;
+    font-size: 1.7rem;
+  }
+
+  .booking-option{
+    display: flex;
+    margin-top: 30px;
+    gap: 2rem;
+  }
+
+  .single-button{
+    padding: 1rem 2.5rem;
+    background-color: #fe9e0d;
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .group-button{
+    padding: 1rem 2.5rem;
+    background-color: #fe9e0d;
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .group-button:hover{
+    background-color: #e48f0f;
+  }
+
+  .single-button:hover{
+    background-color: #e48f0f;
+  }
+
+  .bookinginfo{
+    padding: 5px;
+    margin-top: 40px;
+    font-weight: 400;
+    color: black;
+    font-size: 1.3rem;
+   border-top: 2px solid #fe9e0d;
+  }
+
+
+  .bookinginfo ul li{
+    
+    padding: 3px;
+    text-align: start;
+  }
+
+
+  .about-buttons-container {
+    margin-top: 2rem;
+    display: flex;
+  }
+  .watch-video-button {
+    margin-left: 2rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #484848;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .watch-video-button svg {
+    font-size: 3rem;
+    margin-right: 1rem;
+  }

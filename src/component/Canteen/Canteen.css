@@ -1,0 +1,87 @@
+.FoodOrder {
+  margin-top: 2rem;
+  background-color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  max-width: 750px;
+  border-radius: 2rem;
+  flex-direction: column;
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.menu {
+  margin-bottom: 1.5rem;
+}
+
+ul.combineMenu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column; /* Ensure separate lines */
+  margin-bottom: 1rem;
+}
+
+.menu-name {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.add-to-cart-button {
+  align-items:  center;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  background-color: #FFC107; /* Changed to yellow for differentiation */
+  border: none;
+  border-radius: 5px;
+  max-width: 150px;
+  color: #333;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #FFD54F; /* Lighter yellow on hover */
+  color: #000;
+}
+
+.cart {
+  margin-top: 1.5rem;
+}
+
+.cart-item {
+  margin-bottom: 0.5rem;
+}
+
+.calculate-button {
+  padding: 1rem 2.5rem;
+  background-color: #28A745;
+  border: none;
+  border-radius: 5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.calculate-button:hover {
+  background-color: #218838;
+}
+
+.singleBooking-backgroundImage {
+  position: absolute;
+  left: -150px;
+  z-index: -2;
+  margin-top: -15rem;
+}
+
+.foodOrderWrapped {
+  flex: 0.9;
+  margin-right: 1rem;
+}
