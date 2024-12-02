@@ -1,13 +1,18 @@
 import React from 'react';
 import { FiArrowRight } from "react-icons/fi";
 import AboutBackground from "../Assets/about-background.png";
+import { useNavigate } from 'react-router-dom';
 import './singleBooking.css';
+
 
 
 const singleBooking = () => {
 
+    const navigate = useNavigate();
 
-
+    const bookButtonClick = () => {
+        navigate('/payment');
+    }
     
   return (
     <div className='single-bookingWrapped'>
@@ -71,11 +76,8 @@ const singleBooking = () => {
                 </div>
 
                 <div className="booking-option">
-                    <button className="calculate-button">
-                        Calculate Cost <FiArrowRight />{" "}
-                      </button>
-
-                      <button className="book-button">
+        
+                      <button className="book-button" onClick={bookButtonClick}>
                         Book Ticket <FiArrowRight />{" "}
                       </button>
                 </div>
@@ -85,4 +87,4 @@ const singleBooking = () => {
   )
 }
 
-export default singleBooking
+export default singleBooking;

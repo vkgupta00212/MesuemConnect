@@ -8,58 +8,58 @@
     flex-direction: column;
     text-align: center;
     margin: 2rem auto;
-}
-
-.booking-option{
-    margin-left: 8rem;
-}
-
-.group-input {
-    margin-left: 0;
-    align-items: center;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    text-align: left; /* Align labels to the left */
-    width: 100%; /* Take full width for uniformity */
-}
-
-input, select {
-    width: 100%; /* Full width of the parent container */
+  }
+  
+  .error-input {
+    border-color: red;
+    background-color: #ffe6e6;
+  }
+  
+  .error-box {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 4px;
+  }
+  
+  .groupBooking-backgroundImage {
+    position: absolute;
+    left: -150px;
+    z-index: -2;
+    margin-top: -15rem;
+  }
+  
+  .group-bookingWrapped {
+    flex: 0.9;
+    margin-right: 1rem;
+  }
+  
+  input,
+  select {
+    width: 100%;
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Ensure padding and borders are included in the width */
-}
-
-.wrap-inp {
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+  }
+  
+  .wrap-inp {
     display: flex;
     gap: 1rem;
-    justify-content: center; /* Center the contents horizontally */
-    align-items: center; /* Center the contents vertically */
-    flex-direction: column; /* Stack inputs vertically */
-}
-
-.groupBooking-backgroundImage {
-    position: absolute;
-    left: -150px;
-    z-index: -2;
-    margin-top: -15rem;
-}
-
-.group-bookingWrapped {
-    flex: 0.9;
-    margin-right: 1rem;
-}
-
-.calculate-button{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .book-button {
     padding: 1rem 2.5rem;
     background-color: #fe9e0d;
-    outline: none;
     border: none;
     border-radius: 5rem;
     font-size: 1.1rem;
@@ -67,31 +67,9 @@ input, select {
     font-weight: 600;
     color: white;
     transition: 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
-
-  .book-button{
-    padding: 1rem 2.5rem;
-    background-color: #fe9e0d;
-    outline: none;
-    border: none;
-    border-radius: 5rem;
-    font-size: 1.1rem;
-    cursor: pointer;
-    font-weight: 600;
-    color: white;
-    transition: 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .group-button:hover{
+  
+  .book-button:hover {
     background-color: #e48f0f;
   }
-
-  .single-button:hover{
-    background-color: #e48f0f;
-  }
+  
