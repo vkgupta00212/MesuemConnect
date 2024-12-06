@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import AboutBackground from "../Assets/about-background.png";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./Register.css";
 
 const Register = () => {
@@ -11,7 +12,6 @@ const Register = () => {
     name: "",
     email: "",
     mobile: "",
-    gender: "",
     password: "",
     confirmPassword: "",
   });
@@ -30,7 +30,6 @@ const Register = () => {
       newErrors.email = "Please enter a valid email address.";
     if (!formData.mobile || !/^\d{10}$/.test(formData.mobile))
       newErrors.mobile = "Please enter a valid 10-digit mobile number.";
-    if (!formData.gender) newErrors.gender = "Please select your gender.";
     if (!formData.password || formData.password.length < 6)
       newErrors.password = "Password must be at least 6 characters long.";
     if (formData.password !== formData.confirmPassword)
@@ -40,10 +39,20 @@ const Register = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
     if (validateForm()) {
-      alert("Registration Successful!");
-      navigate("/login");
+      try {
+        const response = await axios.post("http://localhost:3001/register", {
+          name: formData.name,
+          email: formData.email,
+          mobile: formData.mobile,
+          password: formData.password,
+        });
+        alert(response.data.message); // Success message
+        navigate("/login");
+      } catch (error) {
+        alert(error.response?.data?.error || "Registration failed");
+      }
     }
   };
 
@@ -59,96 +68,24 @@ const Register = () => {
         </div>
 
         <div className="Register-input">
-          {/* Name */}
-          <div className="wrap-inp">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              className={errors.name ? "error-input" : ""}
-              placeholder="Enter your name"
-            />
-            {errors.name && <div className="error-box">{errors.name}</div>}
-          </div>
-
-          {/* Email */}
-          <div className="wrap-inp">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              className={errors.email ? "error-input" : ""}
-              placeholder="Enter your email"
-            />
-            {errors.email && <div className="error-box">{errors.email}</div>}
-          </div>
-
-          {/* Mobile Number */}
-          <div className="wrap-inp">
-            <label htmlFor="mobile">Mobile Number</label>
-            <input
-              type="number"
-              name="mobile"
-              value={formData.mobile}
-              onChange={handleInputChange}
-              className={errors.mobile ? "error-input" : ""}
-              placeholder="Enter your mobile number"
-            />
-            {errors.mobile && <div className="error-box">{errors.mobile}</div>}
-          </div>
-
-          {/* Gender */}
-          <div className="wrap-inp">
-            <label htmlFor="gender">Gender</label>
-            <select
-              name="gender"
-              value={formData.gender}
-              onChange={handleInputChange}
-              className={errors.gender ? "error-input" : ""}
-            >
-              <option value="">Select</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
-            {errors.gender && <div className="error-box">{errors.gender}</div>}
-          </div>
-
-          {/* Password */}
-          <div className="wrap-inp">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleInputChange}
-              className={errors.password ? "error-input" : ""}
-              placeholder="Enter your password"
-            />
-            {errors.password && (
-              <div className="error-box">{errors.password}</div>
-            )}
-          </div>
-
-          {/* Confirm Password */}
-          <div className="wrap-inp">
-            <label htmlFor="confirmPassword">Confirm Password</label>
-            <input
-              type="password"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleInputChange}
-              className={errors.confirmPassword ? "error-input" : ""}
-              placeholder="Confirm your password"
-            />
-            {errors.confirmPassword && (
-              <div className="error-box">{errors.confirmPassword}</div>
-            )}
-          </div>
+          {["name", "email", "mobile", "password", "confirmPassword"].map(
+            (field, index) => (
+              <div key={index} className="wrap-inp">
+                <label htmlFor={field}>
+                  {field.charAt(0).toUpperCase() + field.slice(1)}
+                </label>
+                <input
+                  type={field.includes("password") ? "password" : "text"}
+                  name={field}
+                  value={formData[field]}
+                  onChange={handleInputChange}
+                  className={errors[field] ? "error-input" : ""}
+                  placeholder={`Enter your ${field}`}
+                />
+                {errors[field] && <div className="error-box">{errors[field]}</div>}
+              </div>
+            )
+          )}
         </div>
 
         <div className="Register-option">

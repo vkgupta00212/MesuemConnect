@@ -1,3 +1,43 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Container Styles */
+.home-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Banner Styles */
+.home-banner-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+.home-bannerImage-container {
+  position: absolute;
+  top: -100px;
+  right: -170px;
+  z-index: -2;
+  max-width: 700px;
+}
+
+.home-bannerImage-container img {
+  width: 100%;
+}
+
+/* Main Content Styles */
 .Maincontent {
   display: flex;
   justify-content: center;
@@ -21,29 +61,7 @@
   border: 1px solid white;
 }
 
-.home-banner-container {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap; /* Enables wrapping on small screens */
-  justify-content: center;
-  align-items: center;
-  padding-top: 3rem;
-}
-
-.home-bannerImage-container {
-  position: absolute;
-  top: -100px;
-  right: -170px;
-  z-index: -2;
-  max-width: 700px;
-}
-
-.home-image-section {
-  max-width: 600px;
-  flex: 1;
-  padding: 1rem; /* Adds spacing for smaller screens */
-}
-
+/* Text Section Styles */
 .home-text-section {
   flex: 1;
   display: flex;
@@ -66,6 +84,7 @@
   margin: 1.5rem 0rem;
 }
 
+/* Button Styles */
 .secondary-button {
   padding: 1rem 2.5rem;
   background-color: #fe9e0d;
@@ -90,6 +109,8 @@
 .secondary-button:hover {
   background-color: #e48f0f;
 }
+
+
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
