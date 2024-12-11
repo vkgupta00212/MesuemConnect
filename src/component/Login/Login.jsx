@@ -4,7 +4,7 @@ import axios from "axios";
 import { FiArrowRight } from "react-icons/fi";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Logo from "../assets/MesuemConnectLogo.png";
-import AboutBackground from "../Assets/about-background.png";
+import AboutBackground from "../assets/about-background.png";
 import "./Login.css";
 
 const Login = () => {
