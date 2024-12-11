@@ -42,7 +42,7 @@ const Register = () => {
   const handleRegister = async () => {
     if (validateForm()) {
       try {
-        const response = await axios.post("http://localhost:3001/register", {
+        const response = await axios.post("https://mesuemconnect-backend.onrender.com/register", {
           name: formData.name,
           email: formData.email,
           mobile: formData.mobile,
