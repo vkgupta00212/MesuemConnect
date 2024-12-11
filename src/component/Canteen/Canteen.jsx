@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AboutBackground from "../Assets/about-background.png";
+import AboutBackground from "../assets/about-background.png";
 import './Canteen.css';
 
 const Canteen = () => {
