@@ -1,5 +1,5 @@
 import React from "react";
-import AboutBackground from "../Assets/about-background.png";
+import AboutBackground from "../assets/about-background.png";
 import ManavImage from "../assets/manav.jpg";
 import libraryImage from "../assets/library.jpg";
 import auditoriumImage from "../assets/auditorium.jpg";
