@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiArrowRight } from "react-icons/fi";
-import AboutBackground from "../Assets/about-background.png";
+import AboutBackground from "../assets/about-background.png";
 import './payment.css';
 
 
